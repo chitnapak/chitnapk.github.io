@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Retail Analytics & Customer Intelligence | Power BI Project</title>
+    <title>Chitnapak | Data Analyst Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-primary: #f8fafc;
-            --text-secondary: #94a3b8;
-            --accent: #38bdf8;
-            --accent-hover: #0ea5e9;
+            --bg-color: #0f172a;       /* Dark Blue Background */
+            --card-bg: #1e293b;        /* Card Background */
+            --text-primary: #f8fafc;   /* White Text */
+            --text-secondary: #94a3b8; /* Gray Text */
+            --accent: #38bdf8;         /* Light Blue Accent */
+            --accent-hover: #0ea5e9;   /* Darker Blue Hover */
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -30,127 +26,79 @@
             line-height: 1.6;
         }
 
-        /* Layout Utilities */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+        ul { list-style: none; }
 
-        a { text-decoration: none; color: inherit; }
+        /* --- Navigation --- */
+        nav { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .nav-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: -0.5px; }
+        .social-links a { margin-left: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
+        .social-links a:hover { color: var(--accent); }
 
-        /* Navigation */
-        nav {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo { font-weight: 700; font-size: 1.25rem; }
-        .nav-links a { margin-left: 1.5rem; color: var(--text-secondary); transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero {
-            padding: 5rem 0;
-            text-align: center;
-        }
+        /* --- Hero Section --- */
+        .hero { padding: 6rem 0 4rem; text-align: center; }
         .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 3.5rem; margin-bottom: 1rem;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
-        }
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: #0f172a;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-        .btn:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-2px);
-        }
-        .btn i { margin-right: 0.5rem; }
+        .hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 
-        /* Features Grid */
-        .features { padding: 4rem 0; }
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            font-size: 2rem;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-        .card {
+        /* --- Projects Grid --- */
+        .projects-section { padding: 4rem 0; }
+        .section-header { margin-bottom: 3rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
+        .section-header h2 { font-size: 2rem; }
+
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+
+        /* --- Project Card Style --- */
+        .project-card {
             background-color: var(--card-bg);
-            padding: 2rem;
             border-radius: 12px;
+            overflow: hidden;
             border: 1px solid rgba(255,255,255,0.05);
-            transition: 0.3s;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-        .card-icon {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 1rem;
-        }
-        .card h3 { margin-bottom: 0.5rem; }
-        .card p { color: var(--text-secondary); font-size: 0.95rem; }
-
-        /* Tech Stack */
-        .tech-stack {
-            padding: 3rem 0;
-            text-align: center;
-            background-color: #162032;
-        }
-        .tech-tags {
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            flex-direction: column;
         }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+
+        .project-image {
+            height: 200px;
+            background-color: #334155; /* Placeholder color if no image */
+            display: flex; align-items: center; justify-content: center;
+            color: var(--text-secondary); font-size: 3rem;
+        }
+        .project-image img { width: 100%; height: 100%; object-fit: cover; }
+
+        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
+        .project-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
+        .project-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1; }
+
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
         .tag {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 20px;
+            background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
-        /* Footer */
-        footer {
-            padding: 2rem 0;
-            text-align: center;
-            color: var(--text-secondary);
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 4rem;
+        .project-links { display: flex; gap: 1rem; margin-top: auto; }
+        .btn {
+            padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600;
+            display: flex; align-items: center; gap: 0.5rem;
         }
+        .btn-primary { background-color: var(--accent); color: #0f172a; }
+        .btn-primary:hover { background-color: var(--accent-hover); }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); }
+        .btn-outline:hover { border-color: var(--text-primary); background-color: rgba(255,255,255,0.05); }
 
-        /* Responsive */
+        /* --- Footer --- */
+        footer { margin-top: 5rem; padding: 2rem 0; text-align: center; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); }
+
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .grid { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .project-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -158,75 +106,64 @@
 
     <nav>
         <div class="container nav-content">
-            <div class="logo">DataPortfolio<span style="color:var(--accent)">.</span></div>
-            <div class="nav-links">
-                <a href="#"><i class="fab fa-github"></i> GitHub</a>
-                <a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <div class="logo">Chitnapak<span style="color:var(--accent)">.</span></div>
+            <div class="social-links">
+                <a href="https://github.com/chitnapak" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/chitnapak508495270" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </nav>
 
     <section class="hero">
         <div class="container">
-            <h1>Retail Analytics & <br> Customer Intelligence Dashboard</h1>
-            <p>
-                Turning over 1 million rows of raw transactional data into actionable strategic insights. 
-                Featuring Advanced DAX, RFM Segmentation, and Geospatial Analysis.
-            </p>
-            <a href="https://www.notion.so/Project-PowerBI-2e32e2b300328029a112d370212ae389?source=copy_link" target="_blank" class="btn">
-                <i class="fas fa-external-link-alt"></i> View Full Case Study (Notion)
-            </a>
+            <h1>Data Analyst Portfolio</h1>
+            <p>Transforming complex datasets into clear, actionable business strategies.</p>
         </div>
     </section>
 
-    <section class="tech-stack">
+    <section class="projects-section">
         <div class="container">
-            <div class="tech-tags">
-                <span class="tag">Power BI</span>
-                <span class="tag">DAX (Advanced)</span>
-                <span class="tag">Data Modeling</span>
-                <span class="tag">RFM Analysis</span>
-                <span class="tag">SQL</span>
+            <div class="section-header">
+                <h2>Featured Projects</h2>
             </div>
-        </div>
-    </section>
+            
+            <div class="project-grid">
 
-    <section class="features">
-        <div class="container">
-            <h2 class="section-title">Key Analysis Modules</h2>
-            <div class="grid">
-                
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Recent Performance</h3>
-                    <p>Real-time operational health check tracking the last 7 days of sales trends. Includes automated anomaly detection to flag volume irregularities.</p>
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Retail Analytics & Customer Intelligence</h3>
+                        <p class="project-desc">
+                            End-to-end Power BI solution analyzing over 1 million transactions. 
+                            Features <strong>RFM Segmentation</strong> with dynamic percentile scoring, 
+                            store heatmap analysis, and customer lifecycle tracking to reduce churn.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Power BI</span>
+                            <span class="tag">Advanced DAX</span>
+                            <span class="tag">Data Modeling</span>
+                            <span class="tag">RFM Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.notion.so/Project-PowerBI-2e32e2b300328029a112d370212ae389?source=copy_link" target="_blank" class="btn btn-primary">
+                                <i class="fas fa-book-open"></i> Case Study
+                            </a>
+                            <a href="https://github.com/chitnapak/Project_Data_analytics-PowerBI-" target="_blank" class="btn btn-outline">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
                 </div>
-
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-users"></i></div>
-                    <h3>Customer Intelligence (RFM)</h3>
-                    <p>Dynamic 1-5 scoring system based on Percentile Logic. Identifies "Resurrected" users and reveals a 90% adoption rate of cashless payments.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-map-marked-alt"></i></div>
-                    <h3>Store & Temporal Analysis</h3>
-                    <p>Geospatial heatmaps pinpoint "Dhaka" as the key revenue hub and identify predictable peak traffic hours (Lunch & Evening) for staffing optimization.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon"><i class="fas fa-boxes"></i></div>
-                    <h3>Category Deep-Dive</h3>
-                    <p>Interactive drill-through capabilities allowing stakeholders to zoom from high-level category metrics down to specific "Hero Products" driving revenue.</p>
-                </div>
-
-            </div>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Name. Built for Power BI Portfolio.</p>
+            <p>&copy; 2024 Chitnapak. All Rights Reserved.</p>
         </div>
     </footer>
 
