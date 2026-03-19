@@ -46,12 +46,49 @@
         }
         .hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 
-        /* --- Projects Grid --- */
+        /* --- Projects Section Header & Controls --- */
         .projects-section { padding: 4rem 0; }
-        .section-header { margin-bottom: 3rem; border-left: 4px solid var(--accent); padding-left: 1rem; }
+        .section-header-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 3rem;
+        }
+        .section-header { border-left: 4px solid var(--accent); padding-left: 1rem; }
         .section-header h2 { font-size: 2rem; }
+        
+        .slider-controls { display: flex; gap: 0.5rem; }
+        .control-btn {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--text-primary);
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex; justify-content: center; align-items: center;
+            transition: 0.3s;
+            font-size: 1.2rem;
+        }
+        .control-btn:hover { background-color: var(--accent); color: #0f172a; border-color: var(--accent); }
 
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2.5rem; }
+        /* --- Slider Container (Horizontal Scroll) --- */
+        .project-slider { 
+            display: flex; 
+            gap: 2.5rem; 
+            overflow-x: auto; 
+            scroll-snap-type: x mandatory; /* Makes it snap into place */
+            padding-bottom: 1.5rem; /* Space for the custom scrollbar */
+            scroll-behavior: smooth;
+            
+            /* Hide default scrollbar for a cleaner look (optional) */
+            scrollbar-width: thin;
+            scrollbar-color: var(--accent) var(--card-bg);
+        }
+        
+        /* Custom Webkit Scrollbar */
+        .project-slider::-webkit-scrollbar { height: 6px; }
+        .project-slider::-webkit-scrollbar-track { background: var(--card-bg); border-radius: 4px; }
+        .project-slider::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
 
         /* --- Project Card Style --- */
         .project-card {
@@ -62,16 +99,19 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
+            
+            /* Core Logic: Show exactly 2 cards (50% width minus half the gap) */
+            flex: 0 0 calc(50% - 1.25rem); 
+            scroll-snap-align: start; /* Snap point */
         }
         .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
         .project-image {
             height: 200px;
-            background-color: #334155; /* Placeholder color if no image */
+            background-color: #334155;
             display: flex; align-items: center; justify-content: center;
             color: var(--text-secondary); font-size: 3rem;
         }
-        .project-image img { width: 100%; height: 100%; object-fit: cover; }
 
         .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
         .project-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
@@ -96,9 +136,13 @@
         /* --- Footer --- */
         footer { margin-top: 5rem; padding: 2rem 0; text-align: center; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); }
 
+        /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .project-grid { grid-template-columns: 1fr; }
+            .project-card { 
+                /* Show exactly 1 card on Mobile */
+                flex: 0 0 100%; 
+            }
         }
     </style>
 </head>
@@ -123,11 +167,17 @@
 
     <section class="projects-section">
         <div class="container">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
+            <div class="section-header-wrapper">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                </div>
+                <div class="slider-controls">
+                    <button id="prevBtn" class="control-btn" aria-label="Previous Project"><i class="fas fa-arrow-left"></i></button>
+                    <button id="nextBtn" class="control-btn" aria-label="Next Project"><i class="fas fa-arrow-right"></i></button>
+                </div>
             </div>
             
-            <div class="project-grid">
+            <div class="project-slider" id="projectSlider">
 
                 <article class="project-card">
                     <div class="project-image">
@@ -216,6 +266,27 @@
             <p>&copy; 2026 Chitnapak. All Rights Reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const slider = document.getElementById('projectSlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        // Scroll to the left
+        prevBtn.addEventListener('click', () => {
+            // Calculate the width of one card + gap to scroll accurately
+            const cardWidth = slider.querySelector('.project-card').offsetWidth;
+            const gap = parseFloat(getComputedStyle(slider).gap);
+            slider.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
+        });
+
+        // Scroll to the right
+        nextBtn.addEventListener('click', () => {
+            const cardWidth = slider.querySelector('.project-card').offsetWidth;
+            const gap = parseFloat(getComputedStyle(slider).gap);
+            slider.scrollBy({ left: (cardWidth + gap), behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
