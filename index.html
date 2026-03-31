@@ -46,7 +46,7 @@
         }
         .hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
 
-        /* --- Projects Section Header & Controls --- */
+        /* --- Projects Section Header --- */
         .projects-section { padding: 4rem 0; }
         .section-header-wrapper {
             display: flex;
@@ -57,39 +57,13 @@
         .section-header { border-left: 4px solid var(--accent); padding-left: 1rem; }
         .section-header h2 { font-size: 2rem; }
         
-        .slider-controls { display: flex; gap: 0.5rem; }
-        .control-btn {
-            background-color: var(--card-bg);
-            border: 1px solid rgba(255,255,255,0.1);
-            color: var(--text-primary);
-            width: 44px; height: 44px;
-            border-radius: 50%;
-            cursor: pointer;
-            display: flex; justify-content: center; align-items: center;
-            transition: 0.3s;
-            font-size: 1.2rem;
-        }
-        .control-btn:hover { background-color: var(--accent); color: #0f172a; border-color: var(--accent); }
-
-        /* --- Slider Container (Horizontal Scroll) --- */
-        .project-slider { 
-            display: flex; 
+        /* --- Grid Container (1 Row = 2 Columns) --- */
+        .project-grid { 
+            display: grid; 
+            grid-template-columns: repeat(2, 1fr);
             gap: 2.5rem; 
-            overflow-x: auto; 
-            scroll-snap-type: x mandatory; /* Makes it snap into place */
-            padding-bottom: 1.5rem; /* Space for the custom scrollbar */
-            scroll-behavior: smooth;
-            
-            /* Hide default scrollbar for a cleaner look (optional) */
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent) var(--card-bg);
         }
         
-        /* Custom Webkit Scrollbar */
-        .project-slider::-webkit-scrollbar { height: 6px; }
-        .project-slider::-webkit-scrollbar-track { background: var(--card-bg); border-radius: 4px; }
-        .project-slider::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
-
         /* --- Project Card Style --- */
         .project-card {
             background-color: var(--card-bg);
@@ -99,10 +73,6 @@
             transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
-            
-            /* Core Logic: Show exactly 2 cards (50% width minus half the gap) */
-            flex: 0 0 calc(50% - 1.25rem); 
-            scroll-snap-align: start; /* Snap point */
         }
         .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
 
@@ -126,7 +96,7 @@
         .project-links { display: flex; gap: 1rem; margin-top: auto; }
         .btn {
             padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600;
-            display: flex; align-items: center; gap: 0.5rem;
+            display: flex; align-items: center; gap: 0.5rem; width: fit-content;
         }
         .btn-primary { background-color: var(--accent); color: #0f172a; }
         .btn-primary:hover { background-color: var(--accent-hover); }
@@ -139,9 +109,8 @@
         /* --- Responsive Design --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 2.5rem; }
-            .project-card { 
-                /* Show exactly 1 card on Mobile */
-                flex: 0 0 100%; 
+            .project-grid { 
+                grid-template-columns: 1fr; /* Show 1 card per row on Mobile */
             }
         }
     </style>
@@ -171,13 +140,9 @@
                 <div class="section-header">
                     <h2>Featured Projects</h2>
                 </div>
-                <div class="slider-controls">
-                    <button id="prevBtn" class="control-btn" aria-label="Previous Project"><i class="fas fa-arrow-left"></i></button>
-                    <button id="nextBtn" class="control-btn" aria-label="Next Project"><i class="fas fa-arrow-right"></i></button>
-                </div>
             </div>
             
-            <div class="project-slider" id="projectSlider">
+            <div class="project-grid">
 
                 <article class="project-card">
                     <div class="project-image">
@@ -257,6 +222,30 @@
                     </div>
                 </article>
 
+                <article class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-vial"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3 class="project-title">Marketing A/B Testing Analysis</h3>
+                        <p class="project-desc">
+                            Analyzed marketing A/B test results to evaluate ad campaign success. Performed Exploratory Data Analysis (EDA), handled data anomalies (outliers), and conducted rigorous Chi-Square statistical testing to prove the advertisement's significant positive impact on user conversion behavior.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Pandas</span>
+                            <span class="tag">Seaborn</span>
+                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Statistical Analysis</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://www.kaggle.com/code/chitnapakkingkoyao/a-b-testing" target="_blank" class="btn btn-primary">
+                                <i class="fab fa-kaggle"></i> View on Kaggle
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
             </div>
         </div>
     </section>
@@ -266,27 +255,6 @@
             <p>&copy; 2026 Chitnapak. All Rights Reserved.</p>
         </div>
     </footer>
-
-    <script>
-        const slider = document.getElementById('projectSlider');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-
-        // Scroll to the left
-        prevBtn.addEventListener('click', () => {
-            // Calculate the width of one card + gap to scroll accurately
-            const cardWidth = slider.querySelector('.project-card').offsetWidth;
-            const gap = parseFloat(getComputedStyle(slider).gap);
-            slider.scrollBy({ left: -(cardWidth + gap), behavior: 'smooth' });
-        });
-
-        // Scroll to the right
-        nextBtn.addEventListener('click', () => {
-            const cardWidth = slider.querySelector('.project-card').offsetWidth;
-            const gap = parseFloat(getComputedStyle(slider).gap);
-            slider.scrollBy({ left: (cardWidth + gap), behavior: 'smooth' });
-        });
-    </script>
 
 </body>
 </html>
