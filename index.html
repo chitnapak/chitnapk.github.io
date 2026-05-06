@@ -1,263 +1,268 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chitnapak | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --bg-color: #0f172a;       /* Dark Blue Background */
-            --card-bg: #1e293b;        /* Card Background */
-            --text-primary: #f8fafc;   /* White Text */
-            --text-secondary: #94a3b8; /* Gray Text */
-            --accent: #38bdf8;         /* Light Blue Accent */
-            --accent-hover: #0ea5e9;   /* Darker Blue Hover */
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Chitnapak | Data Analyst Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed": "#002106",
+                    "on-background": "#171c21",
+                    "surface-variant": "#dee3e9",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#80f98b",
+                    "surface-container-high": "#e4e8ef",
+                    "secondary-fixed": "#83fc8e",
+                    "on-error": "#ffffff",
+                    "on-tertiary-fixed": "#250059",
+                    "outline-variant": "#c2c6d6",
+                    "on-secondary-fixed-variant": "#00531a",
+                    "surface-container": "#eaeef5",
+                    "primary-container": "#0366d6",
+                    "secondary-fixed-dim": "#66df75",
+                    "on-primary-container": "#e5ebff",
+                    "on-primary-fixed": "#001a41",
+                    "primary": "#004fa8",
+                    "on-primary-fixed-variant": "#004493",
+                    "on-secondary-container": "#007327",
+                    "on-tertiary-container": "#f2e6ff",
+                    "surface-bright": "#f7f9ff",
+                    "surface-container-highest": "#dee3e9",
+                    "on-primary": "#ffffff",
+                    "on-surface": "#171c21",
+                    "inverse-on-surface": "#edf1f8",
+                    "inverse-surface": "#2c3136",
+                    "on-error-container": "#93000a",
+                    "surface-container-low": "#f0f4fb",
+                    "surface-tint": "#005bc0",
+                    "surface": "#f7f9ff",
+                    "tertiary-fixed-dim": "#d3bbff",
+                    "surface-dim": "#d6dae1",
+                    "tertiary-container": "#7b4fce",
+                    "tertiary-fixed": "#ebddff",
+                    "inverse-primary": "#adc6ff",
+                    "on-surface-variant": "#424753",
+                    "primary-fixed-dim": "#adc6ff",
+                    "primary-fixed": "#d8e2ff",
+                    "on-tertiary": "#ffffff",
+                    "on-tertiary-fixed-variant": "#5726a8",
+                    "tertiary": "#6234b4",
+                    "on-secondary": "#ffffff",
+                    "outline": "#727785",
+                    "error": "#ba1a1a",
+                    "background": "#f7f9ff",
+                    "secondary": "#006e25"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "section-gap": "4rem",
+                    "container-max-width": "800px",
+                    "element-gap": "1rem",
+                    "gutter": "1.5rem",
+                    "indent-width": "1.25rem"
+            },
+            "fontFamily": {
+                    "mono-code": ["Space Grotesk"],
+                    "body-md": ["Inter"],
+                    "body-lg": ["Inter"],
+                    "headline-xl": ["Inter"],
+                    "headline-lg": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "mono-label": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "mono-code": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-md": ["14px", {"lineHeight": "1.5", "fontWeight": "400"}],
+                    "body-lg": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "headline-md": ["18px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "mono-label": ["13px", {"lineHeight": "1", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+            font-size: 1.25rem;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-primary);
-            line-height: 1.6;
+            background-color: #f7f9ff;
+            color: #171c21;
         }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-        a { text-decoration: none; color: inherit; transition: 0.3s; }
-        ul { list-style: none; }
-
-        /* --- Navigation --- */
-        nav { padding: 1.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.1); }
-        .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-weight: 700; font-size: 1.5rem; letter-spacing: -0.5px; }
-        .social-links a { margin-left: 1.5rem; font-size: 1.2rem; color: var(--text-secondary); }
-        .social-links a:hover { color: var(--accent); }
-
-        /* --- Hero Section --- */
-        .hero { padding: 6rem 0 4rem; text-align: center; }
-        .hero h1 {
-            font-size: 3.5rem; margin-bottom: 1rem;
-            background: linear-gradient(to right, #fff, #94a3b8);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { font-size: 1.25rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto; }
-
-        /* --- Projects Section Header --- */
-        .projects-section { padding: 4rem 0; }
-        .section-header-wrapper {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            margin-bottom: 3rem;
-        }
-        .section-header { border-left: 4px solid var(--accent); padding-left: 1rem; }
-        .section-header h2 { font-size: 2rem; }
-        
-        /* --- Grid Container (1 Row = 2 Columns) --- */
-        .project-grid { 
-            display: grid; 
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem; 
-        }
-        
-        /* --- Project Card Style --- */
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid rgba(255,255,255,0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
-
-        .project-image {
-            height: 200px;
-            background-color: #334155;
-            display: flex; align-items: center; justify-content: center;
-            color: var(--text-secondary); font-size: 3rem;
-        }
-
-        .project-content { padding: 1.5rem; flex-grow: 1; display: flex; flex-direction: column; }
-        .project-title { font-size: 1.5rem; margin-bottom: 0.5rem; color: var(--text-primary); }
-        .project-desc { font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 1.5rem; flex-grow: 1; }
-
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
-        .tag {
-            font-size: 0.75rem; padding: 0.25rem 0.75rem; border-radius: 20px;
-            background: rgba(56, 189, 248, 0.1); color: var(--accent); border: 1px solid rgba(56, 189, 248, 0.2);
-        }
-
-        .project-links { display: flex; gap: 1rem; margin-top: auto; }
-        .btn {
-            padding: 0.6rem 1.2rem; border-radius: 6px; font-size: 0.9rem; font-weight: 600;
-            display: flex; align-items: center; gap: 0.5rem; width: fit-content;
-        }
-        .btn-primary { background-color: var(--accent); color: #0f172a; }
-        .btn-primary:hover { background-color: var(--accent-hover); }
-        .btn-outline { border: 1px solid rgba(255,255,255,0.2); color: var(--text-primary); }
-        .btn-outline:hover { border-color: var(--text-primary); background-color: rgba(255,255,255,0.05); }
-
-        /* --- Footer --- */
-        footer { margin-top: 5rem; padding: 2rem 0; text-align: center; color: var(--text-secondary); border-top: 1px solid rgba(255,255,255,0.1); }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .project-grid { 
-                grid-template-columns: 1fr; /* Show 1 card per row on Mobile */
-            }
+        .project-link::after {
+            content: " ↗";
+            font-size: 0.8em;
         }
     </style>
 </head>
-<body>
-
-    <nav>
-        <div class="container nav-content">
-            <div class="logo">Chitnapak<span style="color:var(--accent)">.</span></div>
-            <div class="social-links">
-                <a href="https://github.com/chitnapak" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/chitnapak508495270" target="_blank"><i class="fab fa-linkedin"></i></a>
-            </div>
-        </div>
-    </nav>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Portfolio</h1>
-            <p>Transforming complex datasets into clear, actionable business strategies.</p>
-        </div>
-    </section>
-
-    <section class="projects-section">
-        <div class="container">
-            <div class="section-header-wrapper">
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                </div>
-            </div>
-            
-            <div class="project-grid">
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-chart-bar"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Retail Analytics & Customer Intelligence</h3>
-                        <p class="project-desc">
-                            End-to-end Power BI solution analyzing over 1 million transactions. 
-                            Features <strong>RFM Segmentation</strong> with dynamic percentile scoring, 
-                            store heatmap analysis, and customer lifecycle tracking to reduce churn.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tag">Power BI</span>
-                            <span class="tag">Advanced DAX</span>
-                            <span class="tag">Data Modeling</span>
-                            <span class="tag">RFM Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.notion.so/Project-PowerBI-2e32e2b300328029a112d370212ae389?source=copy_link" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-book-open"></i> Case Study
-                            </a>
-                            <a href="https://github.com/chitnapak/Project_Data_analytics-PowerBI-" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-truck"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Olist Logistics & Satisfaction Optimization</h3>
-                        <p class="project-desc">
-                            An end-to-end data analytics solution transforming raw e-commerce transaction and logistics data into actionable insights. Cleaned complex datasets using advanced SQL and built Excel dashboards to prove the correlation between delivery speed and customer satisfaction, discovering the critical "8-Day Rule".
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tag">SQL</span>
-                            <span class="tag">Excel</span>
-                            <span class="tag">Data Cleaning</span>
-                            <span class="tag">Data Visualization</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.notion.so/Project-SQL-Excel-30b2e2b3003280ea81afe94fef1d256c?source=copy_link" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-book-open"></i> Case Study
-                            </a>
-                            <a href="https://github.com/chitnapak/Project_Data_analytics_SQL-Excel" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-ship"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Global Fisheries Supply Chain & Trade Analytics</h3>
-                        <p class="project-desc">
-                            Python-based analysis of the global fisheries trade industry. Transformed complex import/export datasets into actionable strategic insights through interactive data storytelling using Plotly (featuring Sankey diagrams, Treemaps, and Seasonal pattern analysis).
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">Plotly</span>
-                            <span class="tag">Data Storytelling</span>
-                            <span class="tag">Supply Chain</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://colab.research.google.com/drive/1N3C-bFIzKKM5VVoxoFf_pOHQNu5naiPK?usp=sharing" target="_blank" class="btn btn-primary">
-                                <i class="fas fa-code"></i> Open in Google Colab
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-vial"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Marketing A/B Testing Analysis</h3>
-                        <p class="project-desc">
-                            Analyzed marketing A/B test results to evaluate ad campaign success. Performed Exploratory Data Analysis (EDA), handled data anomalies (outliers), and conducted rigorous Chi-Square statistical testing to prove the advertisement's significant positive impact on user conversion behavior.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tag">Python</span>
-                            <span class="tag">Pandas</span>
-                            <span class="tag">Seaborn</span>
-                            <span class="tag">A/B Testing</span>
-                            <span class="tag">Statistical Analysis</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="https://www.kaggle.com/code/chitnapakkingkoyao/a-b-testing" target="_blank" class="btn btn-primary">
-                                <i class="fab fa-kaggle"></i> View on Kaggle
-                            </a>
-                            <a href="https://github.com/chitnapak/Marketing-A-B-Testing" target="_blank" class="btn btn-outline">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Chitnapak. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-</body>
-</html>
+<body class="bg-background text-on-background">
+<!-- TopAppBar -->
+<main class="max-w-container-max-width mx-auto px-gutter py-12">
+<!-- Hero / About -->
+<section class="flex flex-col md:flex-row gap-element-gap items-start mb-section-gap" id="about">
+<div class="w-32 h-32 md:w-40 md:h-40 shrink-0">
+<img alt="Chitnapak Profile" class="w-full h-full object-cover" data-alt="A professional, high-resolution headshot of a data analyst in a bright, modern studio setting with soft, diffused lighting. The style is clean and academic, reflecting a technical professional aesthetic. The subject has a confident, approachable expression, set against a neutral, minimal gray background that complements a light-mode UI design. The overall mood is authoritative yet accessible, using a palette of subtle cool tones." src="https://lh3.googleusercontent.com/aida/ADBb0ugKBnSF00_CEsBjaqLRjnA9b03yWU0pcDSFygl-inUs9LBp1LoG3Tj6zL2iJHuQsA_kfO1K49zTro4lTTqSOd3G08mcp49XQbt4Sd97YQDvAMdLsor9tfrMUpaAXEi-1TZghL7V2LJ6ZhyUMAx0z9DZxjHP6CaewTs2EJW4z-ggt_Wmm8dph29HJqcb2aeHwV2g2EOEWS5DFrFIxFGugayaFOS3uoapBOnSMl6QFrfwo6aOM0KbcEstcbpI-Pk3Q9mxP0wqbDwB"/>
+</div>
+<div class="flex-1 space-y-4">
+<h1 class="font-headline-xl text-headline-xl text-on-surface">Chitnapak Kingkoyao</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"><span class="" style='color: rgba(0, 0, 0, 0.9); font-family: Leelawadee, Thonburi, Tahoma, "Noto Sans Thai Looped", "Noto Sans Thai"; font-size: 14px; white-space: pre-wrap;'>Hi, I'm Kla. I'm a results-oriented Data Analyst with a background in Management. I specialize in bridging the gap between technical data and business strategy, leveraging insights to optimize customer acquisition and drive growth.</span></p>
+<div class="flex gap-4">
+<a class="flex items-center gap-1 font-mono-label text-mono-label text-primary hover:underline" href="https://www.linkedin.com/in/chitnapak508495270">
+<span class="material-symbols-outlined" style="font-size: 14px;">link</span> LINKEDIN
+                    </a>
+<a class="flex items-center gap-1 font-mono-label text-mono-label text-primary hover:underline" href="https://github.com/chitnapak">
+<span class="material-symbols-outlined" style="font-size: 14px;">code</span> GITHUB
+                    </a>
+<a class="flex items-center gap-1 font-mono-label text-mono-label text-primary hover:underline" href="mailto:chitnapakkingkoyao@gmail.com">
+<span class="material-symbols-outlined" style="font-size: 14px;">mail</span> EMAIL
+                    </a></div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="mb-section-gap pt-8 border-t border-outline-variant" id="skills">
+<h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">Technical Proficiencies</h2>
+<div class="space-y-4">
+<div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Programming:</span>
+<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">Python | SQL | R</span>
+</div>
+<div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Tools:</span>
+<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">Power BI | Excel (Advanced) | Data Studio</span>
+</div>
+<div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">Analysis:</span>
+<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">A/B Testing | Star Schema Modeling | RFM Segmentation | Pareto Analysis (80/20) |<br/>Sales &amp; Market Analysis | Project Management</span>
+</div>
+</div>
+</section>
+<!-- Work Experience -->
+<section class="mb-section-gap pt-8 border-t border-outline-variant" id="experience">
+<h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">WoRK Experience</h2>
+<div class="space-y-10">
+<!-- Job 1 -->
+<div class="relative pl-indent-width border-l-2 border-primary">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md font-bold">Management Trainee</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">Jan. 2025 - May. 2025 
+</span>
+</div>
+<div class="font-body-md text-body-md font-medium text-primary mb-3">Charoen Pokphand Foods Public Company Limited</div>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2 list-disc pl-5">
+<li class=""><b data-index-in-node="0" data-path-to-node="5,0,0">Revenue Growth &amp; Acquisition:</b> Drove a <b data-index-in-node="38" data-path-to-node="5,0,0">฿6 million</b> increase in sales revenue and successfully acquired/reactivated 30 key clients by translating historical sales data into targeted, high-conversion marketing strategies.</li>
+<li class=""><b data-index-in-node="0" data-path-to-node="5,1,0">Strategic Market Analysis:</b> Spearheaded market analysis projects, extracting and interpreting complex data to uncover insights that directly guided executive-level strategic decisions.</li>
+<li class=""><b data-index-in-node="0" data-path-to-node="5,2,0">Performance Reporting:</b> Designed and developed comprehensive monthly sales dashboards, streamlining performance tracking and consolidating key metrics for C-level presentations.</li>
+</ul>
+</div><!-- Job 1.5 -->
+<div class="relative pl-indent-width border-l-2 border-primary mt-10">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md font-bold">Business Manager</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">Apr. 2024 – Aug. 2024</span>
+</div>
+<div class="font-body-md text-body-md font-medium text-primary mb-3">Internet Thailand Public Company Limited</div>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2 list-disc pl-5">
+<li class="">Facilitated end-to-end collaboration across diverse teams and clients, <b data-index-in-node="72" data-path-to-node="7,0">streamlining communication</b> to ensure technical solutions were delivered on time and exceeded client expectations</li>
+</ul>
+</div>
+<!-- Job 2 -->
+<div class="relative pl-indent-width border-l-2 border-outline-variant">
+<div class="flex justify-between items-baseline mb-2">
+<h3 class="font-headline-md text-headline-md font-bold">Sales Employee</h3>
+<span class="font-mono-label text-mono-label text-on-surface-variant">Apr. 2023 – Oct. 2023 </span>
+</div>
+<div class="font-body-md text-body-md font-medium text-primary mb-3">Woodwork Co., Ltd.</div>
+<ul class="font-body-md text-body-md text-on-surface-variant space-y-2 list-disc pl-5">
+<li class=""><b data-index-in-node="0" data-path-to-node="10,0,0">Driving market presence</b> for crispy deep-fried mushroom products, with a primary objective of securing placement in <b data-index-in-node="115" data-path-to-node="10,0,0">7-Eleven</b> and other major Modern Trade outlets</li>
+<li class=""><b data-index-in-node="0" data-path-to-node="12,0,0">Orchestrating end-to-end supply chain operations</b>, including rigorous warehouse inspections and production coordination to ensure 100% product availability and quality standards.</li>
+<li class=""><b data-index-in-node="0" data-path-to-node="12,1,0">Managing brand activations and trade booths</b>, directly engaging with consumers to gather market insights and boost immediate conversion rates.</li>
+</ul>
+</div>
+</div>
+</section>
+<!-- Projects -->
+<section class="mb-section-gap pt-8 border-t border-outline-variant" id="projects">
+<h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">Projects</h2>
+<div class="space-y-8">
+<!-- Project 1 -->
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant">
+<img alt="Retail Analytics Dashboard Preview" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujXgslK0EDevige_4C9USvcErR7Wfkv1zDPydFo2sUgzNNRJoFho_5BNVJITZdbPSu8jqO8HshZqS8saMjqlhTm0GnpN6U8EF0tEEakKf2O64BC3EA9aMOtvRihc4z6NDDWNdjpVOWKnY51c-Kl-C6XmDfC2WQHRpF1MwWqa40NrXhNObkiDTtdp45gVeGBmkePSrecS9zmcZTzvkEhpAuBcbsNsihY4KMO-jcvlCakWT_IPlYzdXTjwLKn4EKkYz1__WrFpwKk"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md font-bold">Retail Analytics &amp; Customer Intelligence</h3>
+<div class="flex gap-2">
+<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Power BI</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Comprehensive end-to-end solution for retail oversight, including automated RFM Segmentation and customer lifecycle tracking dashboards.
+                    </p>
+<div class="flex gap-4">
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://www.notion.so/Project-PowerBI-2e32e2b300328029a112d370212ae389?source=copy_link">Notion Case Study</a>
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://github.com/chitnapak/Project_Data_analytics-PowerBI-">GitHub Source</a>
+</div>
+</article>
+<!-- Project 2 -->
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant"><img alt="Olist Logistics &amp; Satisfaction Optimization Analysis" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhO7Qq_BaO1CE8OVkK0LFn3NXWTYEj1UvKdWFUb2XWhNpS1fzLrxZU3CMSODk_dN4HuTou9jtdb_Iyy5KTsT-6AIiIFgimGTy-IS_IbSqGwkzA5K5Z4xAnJxETfCICp4NhKV0JNjTfp5NyROgJIoqOQTIXIx7wH50V63GDkpW7sqNbWqt5BnEfDxB09X9D9rY5mStpuuLUfxb3DuCo8_3gQRXbAjx_4CLIEgNOjJnlTX-Xn4QsfFv6KoRYFRNWwOLdl5KI2l5TV6Q"/></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md font-bold">Olist Logistics &amp; Satisfaction Optimization</h3>
+<div class="flex gap-2">
+<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">SQL</span>
+<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Excel</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Analysis of Brazilian e-commerce logistics. Identified the <strong>"8-Day Rule"</strong> where customer satisfaction scores dropped significantly after an 8-day delivery window.
+                    </p>
+<div class="flex gap-4">
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://www.notion.so/Project-SQL-Excel-30b2e2b3003280ea81afe94fef1d256c?source=copy_link">Notion Case Study</a>
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://github.com/chitnapak/Project_Data_analytics_SQL-Excel">GitHub</a>
+</div>
+</article>
+<!-- Project 3 -->
+<!-- Project 4 -->
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant">
+<img alt="Marketing A/B Testing Analysis Dashboard Overview" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhMQObTFxRb3yeSEWah8aME_2FjKjXoZ1ZVULOT3tFWp_O2zs_47Kyiy-54Huw63_gmf7sdFdD03NOZF4zgQJdyhFpYobtE_wUNKxFBm7OZ8IUjXRQxmpd-1t7pXDafTlyDHeyAcQA5K1xuzC7txIzyuW4lqQqaMXYb3yNhcfRN3ERgiJjOvz1I4Hpv0Fu3zUNUXjYoJH21wxxY0haQt5QRzU67pLujcYzIClE0ACOZ4IMciUjq1v7N01aPZk5I0B1pAWELtDVk"/>
+</div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-headline-md text-headline-md font-bold">Marketing A/B Testing Analysis</h3>
+<div class="flex gap-2">
+<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Python</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-4">
+                        Statistical validation of marketing campaign variants. Used Chi-Square testing to ensure significance in conversion rate deltas.
+                    </p>
+<div class="flex gap-4">
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://www.kaggle.com/code/chitnapakkingkoyao/a-b-testing">Kaggle</a>
+<a class="font-mono-label text-mono-label text-primary hover:underline project-link" href="https://github.com/chitnapak/Marketing-A-B-Testing">GitHub</a>
+</div>
+</article>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-8 bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline flat no shadows">
+<div class="max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-element-gap">
+<div class="font-mono-label text-mono-label text-on-surface-variant">© 2024 Chitnapak Kingkoyao.</div>
+</div>
+</footer>
+</body></html>
