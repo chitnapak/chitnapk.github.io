@@ -116,16 +116,18 @@
 </head>
 <body class="bg-background text-on-background">
 <!-- TopAppBar -->
-<main class="max-w-container-max-width mx-auto px-gutter py-12">
+<main class="max-w-6xl mx-auto px-gutter py-12 flex flex-col md:flex-row gap-12 lg:gap-16 items-start">
+<!-- Left Column -->
+<div class="md:w-1/3 md:sticky md:top-12 shrink-0">
 <!-- Hero / About -->
-<section class="flex flex-col md:flex-row gap-element-gap items-start mb-section-gap" id="about">
+<section class="flex flex-col gap-element-gap items-start" id="about">
 <div class="w-32 h-32 md:w-40 md:h-40 shrink-0">
 <img alt="Chitnapak Profile" class="w-full h-full object-cover" data-alt="A professional, high-resolution headshot of a data analyst in a bright, modern studio setting with soft, diffused lighting. The style is clean and academic, reflecting a technical professional aesthetic. The subject has a confident, approachable expression, set against a neutral, minimal gray background that complements a light-mode UI design. The overall mood is authoritative yet accessible, using a palette of subtle cool tones." src="https://lh3.googleusercontent.com/aida/ADBb0ugKBnSF00_CEsBjaqLRjnA9b03yWU0pcDSFygl-inUs9LBp1LoG3Tj6zL2iJHuQsA_kfO1K49zTro4lTTqSOd3G08mcp49XQbt4Sd97YQDvAMdLsor9tfrMUpaAXEi-1TZghL7V2LJ6ZhyUMAx0z9DZxjHP6CaewTs2EJW4z-ggt_Wmm8dph29HJqcb2aeHwV2g2EOEWS5DFrFIxFGugayaFOS3uoapBOnSMl6QFrfwo6aOM0KbcEstcbpI-Pk3Q9mxP0wqbDwB"/>
 </div>
 <div class="flex-1 space-y-4">
 <h1 class="font-headline-xl text-headline-xl text-on-surface">Chitnapak Kingkoyao</h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed"><span class="" style='color: rgba(0, 0, 0, 0.9); font-family: Leelawadee, Thonburi, Tahoma, "Noto Sans Thai Looped", "Noto Sans Thai"; font-size: 14px; white-space: pre-wrap;'>Hi, I'm Kla. I'm a results-oriented Data Analyst with a background in Management. I specialize in bridging the gap between technical data and business strategy, leveraging insights to optimize customer acquisition and drive growth.</span></p>
-<div class="flex gap-4">
+<div class="flex flex-wrap gap-4">
 <a class="flex items-center gap-1 font-mono-label text-mono-label text-primary hover:underline" href="https://www.linkedin.com/in/chitnapak508495270">
 <span class="material-symbols-outlined" style="font-size: 14px;">link</span> LINKEDIN
                     </a>
@@ -137,8 +139,11 @@
                     </a></div>
 </div>
 </section>
+</div>
+<!-- Right Column -->
+<div class="md:w-2/3 space-y-section-gap min-w-0">
 <!-- Skills Section -->
-<section class="mb-section-gap pt-8 border-t border-outline-variant" id="skills">
+<section class="pt-8 md:pt-0 border-t md:border-t-0 border-outline-variant" id="skills">
 <h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">Technical Proficiencies</h2>
 <div class="space-y-4">
 <div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
@@ -147,16 +152,16 @@
 </div>
 <div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
 <span class="font-headline-md text-headline-md font-bold text-on-surface">Tools:</span>
-<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">Power BI | Excel (Advanced) | Data Studio</span>
+<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">Power BI | Excel | Data Studio</span>
 </div>
 <div class="grid grid-cols-[140px_1fr] gap-4 items-baseline">
 <span class="font-headline-md text-headline-md font-bold text-on-surface">Analysis:</span>
-<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">A/B Testing | Star Schema Modeling | RFM Segmentation | Pareto Analysis (80/20) |<br/>Sales &amp; Market Analysis | Project Management</span>
+<span class="font-mono-code text-mono-code bg-surface-container-low px-2 py-0.5 border border-outline-variant">A/B Testing | Star Schema Modeling | RFM Segmentation | Pareto Analysis (80/20) |Sales &amp; Market Analysis | Project Management</span>
 </div>
 </div>
 </section>
 <!-- Work Experience -->
-<section class="mb-section-gap pt-8 border-t border-outline-variant" id="experience">
+<section class="pt-8 border-t border-outline-variant" id="experience">
 <h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">WoRK Experience</h2>
 <div class="space-y-10">
 <!-- Job 1 -->
@@ -199,18 +204,12 @@
 </div>
 </section>
 <!-- Projects -->
-<section class="mb-section-gap pt-8 border-t border-outline-variant" id="projects">
+<section class="pt-8 border-t border-outline-variant" id="projects">
 <h2 class="font-headline-lg text-headline-lg mb-6 uppercase tracking-wider text-on-surface">Projects</h2>
 <div class="space-y-8">
 <!-- Project 1 -->
-<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant">
-<img alt="Retail Analytics Dashboard Preview" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujXgslK0EDevige_4C9USvcErR7Wfkv1zDPydFo2sUgzNNRJoFho_5BNVJITZdbPSu8jqO8HshZqS8saMjqlhTm0GnpN6U8EF0tEEakKf2O64BC3EA9aMOtvRihc4z6NDDWNdjpVOWKnY51c-Kl-C6XmDfC2WQHRpF1MwWqa40NrXhNObkiDTtdp45gVeGBmkePSrecS9zmcZTzvkEhpAuBcbsNsihY4KMO-jcvlCakWT_IPlYzdXTjwLKn4EKkYz1__WrFpwKk"/>
-</div>
-<div class="flex justify-between items-start mb-4">
-<h3 class="font-headline-md text-headline-md font-bold">Retail Analytics &amp; Customer Intelligence</h3>
-<div class="flex gap-2">
-<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Power BI</span>
-</div>
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="mb-6 mx-auto max-w-lg overflow-hidden rounded-lg border border-outline-variant shadow-sm bg-surface-container aspect-video flex items-center justify-center">
+<img alt="Retail Analytics Dashboard Preview" class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ujXgslK0EDevige_4C9USvcErR7Wfkv1zDPydFo2sUgzNNRJoFho_5BNVJITZdbPSu8jqO8HshZqS8saMjqlhTm0GnpN6U8EF0tEEakKf2O64BC3EA9aMOtvRihc4z6NDDWNdjpVOWKnY51c-Kl-C6XmDfC2WQHRpF1MwWqa40NrXhNObkiDTtdp45gVeGBmkePSrecS9zmcZTzvkEhpAuBcbsNsihY4KMO-jcvlCakWT_IPlYzdXTjwLKn4EKkYz1__WrFpwKk"/>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">
                         Comprehensive end-to-end solution for retail oversight, including automated RFM Segmentation and customer lifecycle tracking dashboards.
@@ -221,13 +220,8 @@
 </div>
 </article>
 <!-- Project 2 -->
-<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant"><img alt="Olist Logistics &amp; Satisfaction Optimization Analysis" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhO7Qq_BaO1CE8OVkK0LFn3NXWTYEj1UvKdWFUb2XWhNpS1fzLrxZU3CMSODk_dN4HuTou9jtdb_Iyy5KTsT-6AIiIFgimGTy-IS_IbSqGwkzA5K5Z4xAnJxETfCICp4NhKV0JNjTfp5NyROgJIoqOQTIXIx7wH50V63GDkpW7sqNbWqt5BnEfDxB09X9D9rY5mStpuuLUfxb3DuCo8_3gQRXbAjx_4CLIEgNOjJnlTX-Xn4QsfFv6KoRYFRNWwOLdl5KI2l5TV6Q"/></div>
-<div class="flex justify-between items-start mb-4">
-<h3 class="font-headline-md text-headline-md font-bold">Olist Logistics &amp; Satisfaction Optimization</h3>
-<div class="flex gap-2">
-<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">SQL</span>
-<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Excel</span>
-</div>
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="mb-6 mx-auto max-w-lg overflow-hidden rounded-lg border border-outline-variant shadow-sm bg-surface-container aspect-video flex items-center justify-center">
+<img alt="Olist Logistics &amp; Satisfaction Optimization Analysis" class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhO7Qq_BaO1CE8OVkK0LFn3NXWTYEj1UvKdWFUb2XWhNpS1fzLrxZU3CMSODk_dN4HuTou9jtdb_Iyy5KTsT-6AIiIFgimGTy-IS_IbSqGwkzA5K5Z4xAnJxETfCICp4NhKV0JNjTfp5NyROgJIoqOQTIXIx7wH50V63GDkpW7sqNbWqt5BnEfDxB09X9D9rY5mStpuuLUfxb3DuCo8_3gQRXbAjx_4CLIEgNOjJnlTX-Xn4QsfFv6KoRYFRNWwOLdl5KI2l5TV6Q"/>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">
                         Analysis of Brazilian e-commerce logistics. Identified the <strong>"8-Day Rule"</strong> where customer satisfaction scores dropped significantly after an 8-day delivery window.
@@ -239,14 +233,8 @@
 </article>
 <!-- Project 3 -->
 <!-- Project 4 -->
-<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="-mx-6 -mt-6 mb-4 overflow-hidden rounded-t-DEFAULT border-b border-outline-variant">
-<img alt="Marketing A/B Testing Analysis Dashboard Overview" class="w-full aspect-video object-cover hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhMQObTFxRb3yeSEWah8aME_2FjKjXoZ1ZVULOT3tFWp_O2zs_47Kyiy-54Huw63_gmf7sdFdD03NOZF4zgQJdyhFpYobtE_wUNKxFBm7OZ8IUjXRQxmpd-1t7pXDafTlyDHeyAcQA5K1xuzC7txIzyuW4lqQqaMXYb3yNhcfRN3ERgiJjOvz1I4Hpv0Fu3zUNUXjYoJH21wxxY0haQt5QRzU67pLujcYzIClE0ACOZ4IMciUjq1v7N01aPZk5I0B1pAWELtDVk"/>
-</div>
-<div class="flex justify-between items-start mb-4">
-<h3 class="font-headline-md text-headline-md font-bold">Marketing A/B Testing Analysis</h3>
-<div class="flex gap-2">
-<span class="font-mono-label text-mono-label px-2 py-1 bg-secondary-container text-on-secondary-container rounded-DEFAULT">Python</span>
-</div>
+<article class="p-6 bg-surface-container-lowest border border-outline-variant rounded-DEFAULT"><div class="mb-6 mx-auto max-w-lg overflow-hidden rounded-lg border border-outline-variant shadow-sm bg-surface-container aspect-video flex items-center justify-center">
+<img alt="Marketing A/B Testing Analysis Dashboard Overview" class="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhMQObTFxRb3yeSEWah8aME_2FjKjXoZ1ZVULOT3tFWp_O2zs_47Kyiy-54Huw63_gmf7sdFdD03NOZF4zgQJdyhFpYobtE_wUNKxFBm7OZ8IUjXRQxmpd-1t7pXDafTlyDHeyAcQA5K1xuzC7txIzyuW4lqQqaMXYb3yNhcfRN3ERgiJjOvz1I4Hpv0Fu3zUNUXjYoJH21wxxY0haQt5QRzU67pLujcYzIClE0ACOZ4IMciUjq1v7N01aPZk5I0B1pAWELtDVk"/>
 </div>
 <p class="font-body-md text-body-md text-on-surface-variant mb-4">
                         Statistical validation of marketing campaign variants. Used Chi-Square testing to ensure significance in conversion rate deltas.
@@ -258,10 +246,11 @@
 </article>
 </div>
 </section>
+</div>
 </main>
 <!-- Footer -->
 <footer class="w-full py-8 bg-surface-container-low dark:bg-surface-container-lowest border-t border-outline-variant dark:border-outline flat no shadows">
-<div class="max-w-container-max-width mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-element-gap">
+<div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-gutter gap-element-gap">
 <div class="font-mono-label text-mono-label text-on-surface-variant">© 2024 Chitnapak Kingkoyao.</div>
 </div>
 </footer>
